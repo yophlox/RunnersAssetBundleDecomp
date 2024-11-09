@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/DrillTrackIgnoreLight" {
 Properties {
  _MainTex ("Base", 2D) = "white" {}
@@ -38,7 +40,7 @@ SubShader {
     {
       v2f o;
 
-      o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+      o.vertex = UnityObjectToClipPos(v.vertex);
       o.vertex.z += (_OffsetZ * 0.01);
       o.texcoord0 = (v.texcoord.xy * _MainTex_ST.xy) + _MainTex_ST.zw;
       o.texcoord1 = v.color.w;

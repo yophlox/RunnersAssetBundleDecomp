@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/ykStg_dvau_ca_t" {
 Properties {
  _MainTex ("Base (RGB) Transparency (A)", 2D) = "white" {}
@@ -38,7 +40,7 @@ SubShader {
     {
       v2f o;
 
-      o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+      o.vertex = UnityObjectToClipPos(v.vertex);
       o.texcoord0 = (v.texcoord0 + frac((_ScrollingSpeed * _Time.y))).xy;
       o.color = v.color;
 

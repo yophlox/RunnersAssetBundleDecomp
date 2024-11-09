@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/ykChr_dmue1" {
 Properties {
  _InnerZOffset ("Inner ZOffset", Float) = 0
@@ -44,7 +46,7 @@ SubShader {
     {
       v2f o;
 
-      o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+      o.vertex = UnityObjectToClipPos(v.vertex);
       o.vertex.z += (_InnerZOffset * 0.01);
 
       o.texcoord0 = ((v.texcoord0.xy + (

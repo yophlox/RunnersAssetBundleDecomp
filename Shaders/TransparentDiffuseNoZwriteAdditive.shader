@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Sonic Dash/TransparentDiffuseNoZWriteAdditive" {
 Properties {
  _Color ("Main Color", Color) = (1,1,1,1)
@@ -39,7 +41,7 @@ SubShader {
     {
       v2f o;
 
-      o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+      o.vertex = UnityObjectToClipPos(v.vertex);
       o.color = v.color;
       o.texcoord0 = v.texcoord0.xyz;
 

@@ -1,3 +1,6 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/ykChrFallOff_dmve1" {
 Properties {
  _InnerZOffset ("Inner ZOffset", Float) = 0
@@ -46,7 +49,7 @@ SubShader {
     {
       v2f o;
 
-      o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+      o.vertex = UnityObjectToClipPos(v.vertex);
       o.vertex.z += (_InnerZOffset * 0.01);
 
       o.texcoord0 = ((v.texcoord0.xy * _DifTex_ST.xy) + _DifTex_ST.zw);
@@ -77,8 +80,8 @@ SubShader {
 
       o.texcoord1.xy = mul(tmpvar_9, envVec).xy;
       o.texcoord1.z = pow ((1.0 - dot (
-    normalize((_WorldSpaceCameraPos - mul(_Object2World, v.vertex).xyz)),
-    mul(_Object2World, float4(v.normal, 0.0)).xyz)), _RimPower);
+    normalize((_WorldSpaceCameraPos - mul(unity_ObjectToWorld, v.vertex).xyz)),
+    mul(unity_ObjectToWorld, float4(v.normal, 0.0)).xyz)), _RimPower);
 
       return o;
     }

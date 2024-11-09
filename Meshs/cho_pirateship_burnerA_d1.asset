@@ -3,38 +3,51 @@
 --- !u!43 &4300000
 Mesh:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: "cho_pirateship_burnerA"
-  serializedVersion: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: cho_pirateship_burnerA_d1
+  serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
     indexCount: 18
     topology: 0
+    baseVertex: 0
     firstVertex: 0
     vertexCount: 8
     localAABB:
       m_Center: {x: -0.003615516, y: -0.001750842, z: -0.3820213}
-      m_Extent: {x: 1.187436E-08, y: 0.16458, z: 0.3815885}
-  m_Shapes: []
-  m_ShapeVertices: []
+      m_Extent: {x: 0.00000001187436, y: 0.16458, z: 0.3815885}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
   m_MeshCompression: 0
-  m_StreamCompression: 0
   m_IsReadable: 1
   m_KeepVertices: 1
   m_KeepIndices: 1
+  m_IndexFormat: 0
   m_IndexBuffer: 000001000200030000000200030002000400050003000400050004000600070005000600
-  m_Skin: []
-  m_BindPose:
   m_VertexData:
-    m_CurrentChannels: 9
+    serializedVersion: 3
     m_VertexCount: 8
     m_Channels:
     - stream: 0
       offset: 0
       format: 0
       dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
     - stream: 0
       offset: 0
       format: 0
@@ -55,29 +68,36 @@ Mesh:
       offset: 0
       format: 0
       dimension: 0
-    m_Streams:
-    - channelMask: 9
+    - stream: 0
       offset: 0
-      stride: 20
-      dividerOp: 0
-      frequency: 0
-    - channelMask: 0
+      format: 0
+      dimension: 0
+    - stream: 0
       offset: 0
-      stride: 0
-      dividerOp: 0
-      frequency: 0
-    - channelMask: 0
+      format: 0
+      dimension: 0
+    - stream: 0
       offset: 0
-      stride: 0
-      dividerOp: 0
-      frequency: 0
-    - channelMask: 0
+      format: 0
+      dimension: 0
+    - stream: 0
       offset: 0
-      stride: 0
-      dividerOp: 0
-      frequency: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
     m_DataSize: 160
-    _typelessdata: 80F26CBB481DF3BD63AEF7BEF9285B3F2687623F80F26CBB2285E5BAF07B43BFB5B4673F6A7A7E3F1AF26CBBB5F0EB3D63AEF7BE6D40743F2687623F80F26CBBA3522ABE103B80BE320D563F9F834D3F1AF26CBBB1BC263E103B80BE345C793FA1834D3F80F26CBBCF9F08BE9AAB99BDEA94593F0DB73D3F1AF26CBBB309053E9AAB99BD7CD4753F0AB73D3F80F26CBB2285E5BA3DE6E2B9B5B4673FB0FE363F
+    _typelessdata: 80f26cbb481df3bd63aef7bef9285b3f2687623f80f26cbb2285e5baf07b43bfb5b4673f6a7a7e3f1af26cbbb5f0eb3d63aef7be6d40743f2687623f80f26cbba3522abe103b80be320d563f9f834d3f1af26cbbb1bc263e103b80be345c793fa1834d3f80f26cbbcf9f08be9aab99bdea94593f0db73d3f1af26cbbb309053e9aab99bd7cd4753f0ab73d3f80f26cbb2285e5ba3de6e2b9b5b4673fb0fe363f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -92,12 +112,6 @@ Mesh:
       m_Data: 
       m_BitSize: 0
     m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BindPoses:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
@@ -135,12 +149,17 @@ Mesh:
       m_NumItems: 0
       m_Data: 
       m_BitSize: 0
-    m_Colors:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
+    m_UVInfo: 0
   m_LocalAABB:
     m_Center: {x: -0.003615516, y: -0.001750842, z: -0.3820213}
-    m_Extent: {x: 1.187436E-08, y: 0.16458, z: 0.3815885}
+    m_Extent: {x: 0.00000001187436, y: 0.16458, z: 0.3815885}
   m_MeshUsageFlags: 0
-  m_MeshOptimized: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: -1
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 

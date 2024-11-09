@@ -45,7 +45,7 @@ public class ExportAssetBundles
   [MenuItem ("Assets/Build All AssetBundles For iOS")]
   public static void BuildAlliPhone()
   {
-    BuildAssetBundles(BuildTarget.iPhone, "iOS", ListAllScenes());
+    BuildAssetBundles(BuildTarget.iOS, "iOS", ListAllScenes());
   }
 
   [MenuItem ("Assets/Build All AssetBundles For Windows")]
@@ -95,7 +95,7 @@ public class ExportAssetBundles
   {
     string[] input = ListSelectedScenes();
     if (input.Length > 0) {
-      BuildAssetBundles(BuildTarget.iPhone, "iOS", input);
+      BuildAssetBundles(BuildTarget.iOS, "iOS", input);
     }
   }
 

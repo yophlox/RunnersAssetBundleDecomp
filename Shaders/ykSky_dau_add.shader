@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/ykSky_dau_add" {
 Properties {
  _MainTex ("Base (RGB) Transparency (A)", 2D) = "" {}
@@ -37,7 +39,7 @@ SubShader {
     {
       v2f o;
 
-      o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+      o.vertex = UnityObjectToClipPos(v.vertex);
       o.texcoord0 = (v.texcoord0 + frac((_ScrollingSpeed * _Time.y))).xy;
 
       return o;

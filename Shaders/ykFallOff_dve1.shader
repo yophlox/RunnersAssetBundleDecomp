@@ -1,3 +1,6 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/ykFallOff_dve1" {
 Properties {
  _DifCol ("Color", Color) = (1,1,1,1)
@@ -45,14 +48,14 @@ SubShader {
     {
       v2f o;
 
-      o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+      o.vertex = UnityObjectToClipPos(v.vertex);
 
       o.texcoord0 = ((v.texcoord0.xy * _DifTex_ST.xy) + _DifTex_ST.zw);
 
       o.color.w = pow ((1.0 - dot (
-    normalize((_WorldSpaceCameraPos - mul(_Object2World, v.vertex).xyz))
+    normalize((_WorldSpaceCameraPos - mul(unity_ObjectToWorld, v.vertex).xyz))
   ,
-    mul(_Object2World, float4(v.normal, 0.0))
+    mul(unity_ObjectToWorld, float4(v.normal, 0.0))
   .xyz)), _RimPower);
       o.color.xyz = v.color.xyz;
 

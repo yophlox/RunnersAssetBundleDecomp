@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/ykOutLine" {
 Properties {
  _OutlineColor ("OutLine Color", Color) = (0,0,0,1)
@@ -39,7 +41,7 @@ SubShader {
 
       float4 vpos;
 
-      float4 tmp = mul(UNITY_MATRIX_MVP, v.vertex);
+      float4 tmp = UnityObjectToClipPos(v.vertex);
 
       vpos.w = tmp.w;
 

@@ -1,3 +1,6 @@
+// Upgrade NOTE: commented out 'half4 unity_LightmapST', a built-in variable
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/ykStg_du_t" {
 Properties {
  _MainTex ("テクスチャ", 2D) = "white" {}
@@ -20,7 +23,7 @@ SubShader {
     sampler2D _LitTex;
     float4 _AmbientColor;
     float4 _ScrollingSpeed;
-    half4 unity_LightmapST;
+    // half4 unity_LightmapST;
 
     struct appdata_t
     {
@@ -40,7 +43,7 @@ SubShader {
     {
       v2f o;
 
-      o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+      o.vertex = UnityObjectToClipPos(v.vertex);
       o.texcoord0 = (v.texcoord0 + frac((_ScrollingSpeed * _Time.y))).xy;
       o.texcoord1 = ((v.texcoord1.xy * unity_LightmapST.xy) + unity_LightmapST.zw);
 

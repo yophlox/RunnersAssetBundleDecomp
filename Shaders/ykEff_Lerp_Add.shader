@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/ykEff_Lerp_Add" {
 Properties {
  _StOneCol ("Start WhiteColor", Color) = (1,1,1,1)
@@ -48,7 +50,7 @@ SubShader {
     {
       v2f o;
 
-      float4 vpos = mul(UNITY_MATRIX_MVP, v.vertex);
+      float4 vpos = UnityObjectToClipPos(v.vertex);
       vpos.z += (_ZOffset * 0.01);
 
       o.vertex = vpos;

@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/ykSky_dv" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
@@ -35,7 +37,7 @@ SubShader {
     {
       v2f o;
 
-      o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+      o.vertex = UnityObjectToClipPos(v.vertex);
       o.color = v.color;
 
       o.texcoord = (v.texcoord.xy * _MainTex_ST.xy) + _MainTex_ST.zw;

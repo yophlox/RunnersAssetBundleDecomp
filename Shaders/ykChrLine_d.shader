@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/ykChrLine_d" {
 Properties {
  _OutlineColor ("OutLine Color", Color) = (0,0,0,1)
@@ -43,7 +45,7 @@ SubShader {
     {
       v2f o;
 
-      o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+      o.vertex = UnityObjectToClipPos(v.vertex);
       o.vertex.z += (_InnerZOffset * 0.01);
 
       float2 tmp = ((v.texcoord0.xy * _DifTex_ST.xy) + _DifTex_ST.zw);

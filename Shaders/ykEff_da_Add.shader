@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/ykEff_da_Add" {
 Properties {
  _MainTex ("Base (RGB) Transparency (A)", 2D) = "white" {}
@@ -40,7 +42,7 @@ SubShader {
     {
       v2f o;
 
-      float4 vpos = mul(UNITY_MATRIX_MVP, v.vertex);
+      float4 vpos = UnityObjectToClipPos(v.vertex);
       vpos.z += (_ZOffset * 0.01);
 
       o.vertex = vpos;
